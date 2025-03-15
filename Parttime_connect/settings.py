@@ -140,7 +140,7 @@ EMAIL_HOST_USER = 'contactashiqashiq@gmail.com'
 EMAIL_HOST_PASSWORD = 'tglo mbiw pgek vfsa'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
-ALLOWED_HOSTS = ["part.vercel.app"]
+ALLOWED_HOSTS = ["part-ten.vercel.app"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
