@@ -1,0 +1,70 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#{% extends 'worker/index.html' %}#}
+{#{% block body %}#}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/edit_rate_post">#}
+{#  <table width="200" border="1">#}
+{#    <tr>#}
+{#      <td>Work type </td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield" value="{{ val.worktype }}" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>Details</td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield2" value="{{ val.details }}" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>Rate</td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield3" value="{{ val.rate }}" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td colspan="2"><label>#}
+{#        <div align="center">#}
+{#          <input name="edit" type="submit" id="edit" value="edit" />#}
+{#        </div>#}
+{#      </label></td>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+{#</html>#}
+{% extends 'worker/index.html' %}
+
+{% block body %}
+<body>
+  <form id="form1" name="form1" method="post" action="/edit_rate_post">
+    <table width="100%" border="0" style="border-collapse: collapse; margin: 20px auto;">
+      <tr>
+        <td style="padding: 10px; font-weight: bold; text-align: right;">Work Type</td>
+        <td style="padding: 10px;"><input type="text" name="textfield" value="{{ val.worktype }}" style="width: 100%; padding: 5px; border: 1px solid #ccc;"required /></td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; font-weight: bold; text-align: right;">Details</td>
+        <td style="padding: 10px;"><input type="text" name="textfield2" value="{{ val.details }}" style="width: 100%; padding: 5px; border: 1px solid #ccc;"required /></td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; font-weight: bold; text-align: right;">Rate</td>
+        <td style="padding: 10px;"><input type="text" name="textfield3" value="{{ val.rate }}" style="width: 100%; padding: 5px; border: 1px solid #ccc;"required /></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align: center; padding: 10px;">
+          <input name="edit" type="submit" id="edit" value="Edit" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; font-size: 16px;"/>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+{% endblock %}
+

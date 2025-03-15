@@ -1,0 +1,269 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+
+{#{% extends 'worker/index.html' %}#}
+{#{% block body %}#}
+{#<body>#}
+{#<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">#}
+{#  <table width="200" border="1">#}
+{#    <tr>#}
+{#      <td>Name</td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>Phone</td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield2" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>Address</td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield3" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>Image</td>#}
+{#      <td><label>#}
+{#        <input type="file" name="file" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>DOB</td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield4" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td colspan="2"><label>#}
+{#        <div align="center">#}
+{#          <input type="submit" name="Submit" />#}
+{#          </div>#}
+{#      </label></td>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+{#</html>#}
+{#{% extends 'worker/index.html' %}#}
+{#{% block body %}#}
+{#<body>#}
+{#  <form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">#}
+{#    <div class="form-container">#}
+{#      <table class="form-table" border="0">#}
+{#        <tr>#}
+{#          <td class="label">Name</td>#}
+{#          <td><input type="text" name="textfield" class="input-field" /></td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#          <td class="label">Phone</td>#}
+{#          <td><input type="text" name="textfield2" class="input-field" /></td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#          <td class="label">Address</td>#}
+{#          <td><input type="text" name="textfield3" class="input-field" /></td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#          <td class="label">Image</td>#}
+{#          <td><input type="file" name="file" class="input-field" /></td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#          <td class="label">DOB</td>#}
+{#          <td><input type="text" name="textfield4" class="input-field" /></td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#          <td colspan="2">#}
+{#            <div class="submit-container">#}
+{#              <input type="submit" name="Submit" class="submit-button" />#}
+{#            </div>#}
+{#          </td>#}
+{#        </tr>#}
+{#      </table>#}
+{#    </div>#}
+{#  </form>#}
+{##}
+{#  <style>#}
+{#    .form-container {#}
+{#      width: 50%;#}
+{#      margin: 0 auto;#}
+{#      padding: 20px;#}
+{#      background-color: #f9f9f9;#}
+{#      border-radius: 8px;#}
+{#    }#}
+{##}
+{#    .form-table {#}
+{#      width: 100%;#}
+{#      border-collapse: collapse;#}
+{#    }#}
+{##}
+{#    .form-table td {#}
+{#      padding: 10px;#}
+{#    }#}
+{##}
+{#    .label {#}
+{#      font-weight: bold;#}
+{#      text-align: right;#}
+{#      padding-right: 20px;#}
+{#    }#}
+{##}
+{#    .input-field {#}
+{#      width: 100%;#}
+{#      padding: 8px;#}
+{#      border: 1px solid #ccc;#}
+{#      border-radius: 4px;#}
+{#    }#}
+{##}
+{#    .submit-container {#}
+{#      text-align: center;#}
+{#    }#}
+{##}
+{#    .submit-button {#}
+{#      padding: 10px 20px;#}
+{#      background-color: #4CAF50;#}
+{#      color: white;#}
+{#      border: none;#}
+{#      border-radius: 5px;#}
+{#      cursor: pointer;#}
+{#    }#}
+{##}
+{#    .submit-button:hover {#}
+{#      background-color: #45a049;#}
+{#    }#}
+{#  </style>#}
+{#</body>#}
+{#{% endblock %}#}
+{% extends 'worker/index.html' %}
+{% block body %}
+<body>
+  <form action="/editProfilePost" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    <div class="form-card">
+      <h2 class="form-title">Profile Details</h2>
+      <table class="form-table" border="0">
+        <tr>
+          <td class="label">Name</td>
+          <td><input type="text" name="textfield" class="input-field" placeholder="Enter your name"  value="{{ work.name }}"required/></td>
+        </tr>
+        <tr>
+          <td class="label">Phone</td>
+          <td><input type="text" name="textfield2" class="input-field" placeholder="Enter your phone number" value="{{ work.phone }}"required pattern="[6789][0-9]{9}" /></td>
+        </tr>
+        <tr>
+          <td class="label">place</td>
+          <td><input type="text" name="place" class="input-field" placeholder="Enter your address" value="{{ work.place }}"required /></td>
+        </tr>
+
+          <tr>
+          <td class="label">Email</td>
+          <td><input type="email" name="email" class="input-field" placeholder="Enter your email" value="{{ work.email }}"required /></td>
+        </tr>
+          <tr>
+                <td class="label">post</td>
+          <td><input type="text" name="post" class="input-field" placeholder="Enter your address" value="{{ work.post }}" pattern="[A-Z a-z.]{3,25}"/></td>
+          </tr>
+          <tr>
+                <td class="label">pin</td>
+          <td><input type="text" name="pin" class="input-field" placeholder="Enter your address" value="{{ work.pin }}" required pattern="[0-9]{6}" /></td>
+        </tr>
+        <tr>
+          <td class="label">Image</td>
+           <td><img src="{{ work.image.url }}" alt="{{ work.image.url }}" width="50px" height="50px"><br>
+          <input type="file" name="file" class="input-file" /></td>
+        </tr>
+        <tr>
+          <td class="label">DOB</td>
+          <td><input type="date" name="textfield4" class="input-field" placeholder="Enter your date of birth" value="{{ work.dob }}"min="1990-01-01" max="2019-12-31" required  /></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div class="submit-container">
+              <input type="submit" name="Submit" class="submit-button" value="Submit" />
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </form>
+
+  <style>
+    body {
+      background-color: #f4f7fa;
+      font-family: Arial, sans-serif;
+    }
+
+    .form-card {
+      width: 400px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-left: 300px;
+    }
+
+    .form-title {
+      text-align: center;
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .form-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .form-table td {
+      padding: 10px;
+      vertical-align: middle;
+    }
+
+    .label {
+      font-size: 14px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .input-field, .input-file {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      background-color: #f9f9f9;
+    }
+
+    .input-field:focus, .input-file:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+
+    .submit-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .submit-button {
+      padding: 12px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</body>
+{% endblock %}
+

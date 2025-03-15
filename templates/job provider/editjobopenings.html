@@ -1,0 +1,142 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#{% extends 'job provider/jobpindex.html' %}#}
+{##}
+{#{% block body %}#}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/edit_job_opening_post">#}
+{#  <table width="200" border="1">#}
+{#    <tr>#}
+{#      <td>Jobtype</td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield" value="{{ val.job_type }}" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>Experience</td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield3" value="{{ val.experience }}" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>Qualification</td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield4" value="{{ val.qualification }}" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>No. of vaccancy </td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield5" value="{{ val.no_of_vaccancy }}" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>Salary</td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield6" value="{{ val.salary }}" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#      <tr>#}
+{#      <td>Duedate</td>#}
+{#      <td><label>#}
+{#        <input type="date" name="ooo" value="{{  date }}"/>#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td colspan="2"><label>#}
+{#        <input type="submit" name="Submit" value="edit" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+{#</html>#}
+
+{% extends 'job provider/jobpindex.html' %}
+
+{% block body %}
+<body>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+        margin-left: 200px;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ddd;
+
+    }
+    th {
+      background-color: #f4f4f4;
+      font-weight: bold;
+
+    }
+    td input {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    td input[type="date"] {
+      padding: 6px;
+    }
+    td input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    td input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+
+  <form id="form1" name="form1" method="post" action="/edit_job_opening_post">
+    <table>
+      <tr>
+        <th>Job Type</th>
+        <td><input type="text" name="textfield" value="{{ val.job_type }} " required /></td>
+      </tr>
+      <tr>
+        <th>Experience</th>
+        <td><input type="number" name="textfield3" value="{{ val.experience }}" required /></td>
+      </tr>
+      <tr>
+        <th>Qualification</th>
+        <td><input type="text" name="textfield4" value="{{ val.qualification }}" required /></td>
+      </tr>
+      <tr>
+        <th>No. of Vacancy</th>
+        <td><input type="number" name="textfield5" value="{{ val.no_of_vaccancy }}" required /></td>
+      </tr>
+      <tr>
+        <th>Salary</th>
+        <td><input type="text" name="textfield6" value="{{ val.salary }}" required /></td>
+      </tr>
+      <tr>
+        <th>Due Date</th>
+        <td><input type="date" name="ooo" value="{{ date }}" required /></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="submit" name="Submit" value="Edit" />
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+{% endblock %}
+

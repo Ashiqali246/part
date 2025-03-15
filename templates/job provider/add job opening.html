@@ -1,0 +1,147 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#{% extends 'job provider/jobpindex.html' %}#}
+{##}
+{#{% block body %}#}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/add_job_opening_post">#}
+{#  <table width="200" border="1">#}
+{#    <tr>#}
+{#      <td>Jobtype</td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{##}
+{#    <tr>#}
+{#      <td>Experience</td>#}
+{#      <td><label>#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>Qualification</td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield4" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>No. of vaccancy </td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield5" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>Salary</td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield6" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#      <tr>#}
+{#      <td>Duedate</td>#}
+{#      <td><label>#}
+{#        <input type="date" name="ooo" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td colspan="2"><label>#}
+{#        <input type="submit" name="Submit" value="add" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+{#</html>#}
+{#{% extends 'job provider/jobpindex.html' %}#}
+{##}
+{#{% block body %}#}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/add_job_opening_post">#}
+{#  <table style="width: 100%; max-width: 600px; margin: auto; border-collapse: collapse;" border="1">#}
+{#    <thead>#}
+{#      <tr style="background-color: #f2f2f2;">#}
+{#        <th colspan="2" style="text-align: center; padding: 10px; font-size: 1.2em;">Job Opening Form</th>#}
+{#      </tr>#}
+{#    </thead>#}
+{#    <tbody>#}
+{#      <tr>#}
+{#        <td style="padding: 10px;">Job Type</td>#}
+{#        <td><input type="text" name="textfield" style="width: 100%; padding: 8px; border: 1px solid #ccc;" /></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td style="padding: 10px;">Experience</td>#}
+{#        <td><input type="text" name="textfield2" style="width: 100%; padding: 8px; border: 1px solid #ccc;" /></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td style="padding: 10px;">Qualification</td>#}
+{#        <td><input type="text" name="textfield4" style="width: 100%; padding: 8px; border: 1px solid #ccc;" /></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td style="padding: 10px;">No. of Vacancies</td>#}
+{#        <td><input type="text" name="textfield5" style="width: 100%; padding: 8px; border: 1px solid #ccc;" /></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td style="padding: 10px;">Salary</td>#}
+{#        <td><input type="text" name="textfield6" style="width: 100%; padding: 8px; border: 1px solid #ccc;" /></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td style="padding: 10px;">Due Date</td>#}
+{#        <td><input type="date" name="ooo" style="width: 100%; padding: 8px; border: 1px solid #ccc;" /></td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td colspan="2" style="text-align: center; padding: 20px;">#}
+{#          <input type="submit" name="Submit" value="Add Job Opening" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; font-size: 1em;"/>#}
+{#        </td>#}
+{#      </tr>#}
+{#    </tbody>#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+{% extends 'job provider/jobpindex.html' %}
+
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/add_job_opening_post">
+  <div style="max-width: 600px; margin: 40px auto; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-left: 270px;">
+    <h2 style="text-align: center; color: #333; font-family: 'Arial', sans-serif;">Add Job Opening</h2><br>
+    <table style="width: 100%; border-spacing: 10px;">
+      <tr>
+        <td style="font-weight: bold; color: #333; font-size: 1.1em;">Job Type</td>
+        <td><input type="text" name="textfield" style="width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #ddd;" required /></td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold; color: #333; font-size: 1.1em;">Experience</td>
+        <td><input type="number" name="textfield2" style="width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #ddd;" required /></td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold; color: #333; font-size: 1.1em;">Qualification</td>
+        <td><input type="text" name="textfield4" style="width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #ddd;" required /></td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold; color: #333; font-size: 1.1em;">No. of Vacancies</td>
+        <td><input type="number" name="textfield5" style="width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #ddd;" required /></td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold; color: #333; font-size: 1.1em;">Salary</td>
+        <td><input type="text" name="textfield6" style="width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #ddd;" required /></td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold; color: #333; font-size: 1.1em;">Due Date</td>
+        <td><input type="date" name="ooo" style="width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #ddd;" required /></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align: center;"><br>
+          <input type="submit" name="Submit" value="Add Job Opening" style="background-color: #4CAF50; color: white; padding: 12px 30px; border: none; border-radius: 5px; font-size: 1.1em; cursor: pointer; transition: background-color 0.3s ease;"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,275 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#{% extends 'job provider/jobpindex.html' %}#}
+{##}
+{#{% block body %}#}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="">#}
+{#  <table width="504" border="1">#}
+{#    <tr>#}
+{#      <td width="26">Job Title </td>#}
+{#      <td width="60">No of vaccancy </td>#}
+{#      <td width="75">Qualification</td>#}
+{#      <td width="67">Experience</td>#}
+{#      <td width="38">Salary</td>#}
+{#      <td width="51">Duedate</td>#}
+{#      <td width="101"><p>&nbsp;</p>      </td>#}
+{#    </tr>#}
+{#      {% for i in val %}#}
+{#    <tr>#}
+{#      <td>&nbsp;{{ i.job_type }}</td>#}
+{#      <td>&nbsp;{{ i.no_of_vaccancy }}</td>#}
+{#      <td>&nbsp;{{ i.qualification }}</td>#}
+{#      <td>&nbsp;{{ i.experience }}</td>#}
+{#      <td>&nbsp;{{ i.salary }}</td>#}
+{#      <td>&nbsp;{{ i.due_date }}</td>#}
+{#      <td><p><a href="/edit_job_openings/{{ i.id }}">Edit</a></p>#}
+{#      <p><a href="/Delete_jobopenings/{{ i.id }}">Delete</a></p></td>#}
+{#    </tr>#}
+{#      {% endfor %}#}
+{#    <tr>#}
+{#      <td colspan="8"><a href="/add_job_opening">Add New</a> </td>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+{#</html>#}
+{##}
+{##}
+{#{% extends 'job provider/jobpindex.html' %}#}
+{##}
+{#{% block body %}#}
+{#<body>#}
+{#  <style>#}
+{#    body {#}
+{#      font-family: Arial, sans-serif;#}
+{#      margin: 20px;#}
+{#      background-color: #f9f9f9;#}
+{#    }#}
+{#    .table-container {#}
+{#      overflow-x: auto;#}
+{#      margin: 20px 0;#}
+{#    }#}
+{#    table {#}
+{#      width: 100%;#}
+{#      border-collapse: collapse;#}
+{#      margin: 20px 0;#}
+{#      background-color: #ffffff;#}
+{#      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);#}
+{#    }#}
+{#    th, td {#}
+{#      text-align: left;#}
+{#      padding: 12px 15px;#}
+{#      border: 1px solid #ddd;#}
+{#    }#}
+{#    th {#}
+{#      background-color: #007BFF;#}
+{#      color: white;#}
+{#      font-weight: bold;#}
+{#    }#}
+{#    tr:nth-child(even) {#}
+{#      background-color: #f9f9f9;#}
+{#    }#}
+{#    tr:hover {#}
+{#      background-color: #f1f1f1;#}
+{#    }#}
+{#    a {#}
+{#      color: #007BFF;#}
+{#      text-decoration: none;#}
+{#      font-weight: bold;#}
+{#    }#}
+{#    a:hover {#}
+{#      text-decoration: underline;#}
+{#    }#}
+{#    .add-new {#}
+{#      text-align: center;#}
+{#      margin-top: 20px;#}
+{#    }#}
+{#    .add-new a {#}
+{#      display: inline-block;#}
+{#      padding: 12px 25px;#}
+{#      background-color: #28a745;#}
+{#      color: white;#}
+{#      text-decoration: none;#}
+{#      border-radius: 5px;#}
+{#      font-size: 16px;#}
+{#    }#}
+{#    .add-new a:hover {#}
+{#      background-color: #218838;#}
+{#    }#}
+{#  </style>#}
+{##}
+{#  <div class="table-container">#}
+{#    <form id="form1" name="form1" method="post" action="">#}
+{#      <table>#}
+{#        <thead>#}
+{#          <tr>#}
+{#            <th>Job Title</th>#}
+{#            <th>No of Vacancies</th>#}
+{#            <th>Qualification</th>#}
+{#            <th>Experience</th>#}
+{#            <th>Salary</th>#}
+{#            <th>Due Date</th>#}
+{#            <th>Actions</th>#}
+{#          </tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#          {% for i in val %}#}
+{#          <tr>#}
+{#            <td>{{ i.job_type }}</td>#}
+{#            <td>{{ i.no_of_vaccancy }}</td>#}
+{#            <td>{{ i.qualification }}</td>#}
+{#            <td>{{ i.experience }}</td>#}
+{#            <td>{{ i.salary }}</td>#}
+{#            <td>{{ i.due_date }}</td>#}
+{#            <td>#}
+{#              <a href="/edit_job_openings/{{ i.id }}">Edit</a> |#}
+{#              <a href="/Delete_jobopenings/{{ i.id }}">Delete</a>#}
+{#            </td>#}
+{#          </tr>#}
+{#          {% endfor %}#}
+{#        </tbody>#}
+{#        <tfoot>#}
+{#          <tr>#}
+{#            <td colspan="7" class="add-new">#}
+{#              <a href="/add_job_opening">Add New Job Opening</a>#}
+{#            </td>#}
+{#          </tr>#}
+{#        </tfoot>#}
+{#      </table>#}
+{#    </form>#}
+{#  </div>#}
+{#</body>#}
+{#{% endblock %}#}
+
+{% extends 'job provider/jobpindex.html' %}
+
+{% block body %}
+<body>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0px;
+      background-color: #f9f9f9;
+    }
+    .table-container {
+      overflow-x: auto;
+      margin: 20px 0;
+        margin-left: 140px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+
+    }
+    th {
+      background-color: #28a745;
+      color: white;
+        border-radius: 5px;
+      font-weight: bold;
+
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.edit {
+      color: white;
+      background-color: #28a745;
+      padding: 5px 18px;
+      border-radius: 3px;
+    }
+    a.edit:hover {
+      background-color: #218838;
+    }
+    a.delete {
+      color: white;
+      background-color: #dc3545;
+      padding: 5px 10px;
+      border-radius: 3px;
+    }
+    a.delete:hover {
+      background-color: #c82333;
+    }
+    .add-new {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .add-new a {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .add-new a:hover {
+      background-color: #218838;
+    }
+  </style>
+
+  <div class="table-container">
+    <form id="form1" name="form1" method="post" action="">
+      <table>
+        <thead>
+          <tr>
+            <th>Job Title</th>
+            <th>No of Vacancies</th>
+            <th>Qualification</th>
+            <th>Experience</th>
+            <th>Salary</th>
+            <th>Due Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in val %}
+          <tr>
+            <td>{{ i.job_type }}</td>
+            <td>{{ i.no_of_vaccancy }}</td>
+            <td>{{ i.qualification }}</td>
+            <td>{{ i.experience }}</td>
+            <td>{{ i.salary }}</td>
+            <td>{{ i.due_date }}</td>
+            <td>
+              <a href="/edit_job_openings/{{ i.id }}" class="edit">Edit</a><br><br>
+              <a href="/Delete_jobopenings/{{ i.id }}" class="delete">Delete</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="7" class="add-new">
+              <a href="/add_job_opening#about">Add New Job Opening</a>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </form>
+  </div>
+</body>
+{% endblock %}
+

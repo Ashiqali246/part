@@ -1,0 +1,115 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{#{% extends 'worker/index.html' %}#}
+{#{% block body %}#}
+{#<body>#}
+{#<table width="200" border="1">#}
+{#  <tr>#}
+{#    <td>User</td>#}
+{#    <td>Date</td>#}
+{#    <td>Description</td>#}
+{#    <td>Status</td>#}
+{#  </tr>#}
+{#     {% for i in data %}#}
+{#  <tr>#}
+{#    <td>{{ i.USER.name }}&nbsp;</td>#}
+{#    <td>{{ i.date }}&nbsp;</td>#}
+{#    <td>{{ i.description }}&nbsp;</td>#}
+{#      {% if i.status == 'pending' %}#}
+{#    <td>{{ i.status }}&nbsp;<br>#}
+{#    <a href="/accept_work/{{ i.id }}">Accept</a> <br>#}
+{#  <a href="/reject_work/{{ i.id }}">Reject</a> </td>#}
+{#          {% else %}#}
+{#          <td>{{ i.status }}</td>#}
+{#  {% endif %}#}
+{#  </tr>#}
+{#    {% endfor %}#}
+{#</table>#}
+{#</body>#}
+{#</html>#}
+{#{% endblock %}#}
+{% extends 'worker/index.html' %}
+{% block body %}
+<body>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #eef2f7;
+    margin: 0px;
+  }
+  table {
+    width: 90%;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  th, td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  th {
+    background-color: #343a40;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  tr {
+    transition: background-color 0.2s ease-in-out;
+  }
+  tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  tr:hover {
+    background-color: #f1f3f5;
+  }
+  td a {
+    display: inline-block;
+    margin: 5px 0;
+    padding: 6px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9em;
+  }
+  td a:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in data %}
+    <tr>
+      <td>{{ i.USER.name }}</td>
+      <td>{{ i.date }}</td>
+      <td>{{ i.description }}</td>
+      {% if i.status == 'pending' %}
+      <td>{{ i.status }}<br>
+        <a href="/accept_work/{{ i.id }}">Accept</a>
+        <a href="/reject_work/{{ i.id }}">Reject</a>
+      </td>
+      {% else %}
+      <td>{{ i.status }}</td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</body>
+{% endblock %}

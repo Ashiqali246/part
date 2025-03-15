@@ -1,0 +1,74 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+
+{#{% extends 'worker/index.html' %}#}
+{#{% block body %}#}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="new_rate_post">#}
+{#  <table width="200" border="1">#}
+{#    <tr>#}
+{#      <td>Work type </td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>Details</td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield2" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>Rate</td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield3" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td colspan="2"><label>#}
+{#        <div align="center">#}
+{#          <input name="add" type="submit" id="add" value="add" />#}
+{#          </div>#}
+{#      </label></td>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+{#</html>#}
+{% extends 'worker/index.html' %}
+{% block body %}
+<body>
+  <form id="form1" name="form1" method="post" action="new_rate_post">
+    <table style="width: 50%; margin: 20px auto; border-collapse: collapse; background-color: #f9f9f9;">
+      <tr>
+        <td style="padding: 10px; text-align: left; font-weight: bold;">Work Type</td>
+        <td style="padding: 10px; text-align: left;">
+          <input type="text" name="textfield" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;" required/>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; text-align: left; font-weight: bold;">Details</td>
+        <td style="padding: 10px; text-align: left;">
+          <input type="text" name="textfield2" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;"required />
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; text-align: left; font-weight: bold;">Rate</td>
+        <td style="padding: 10px; text-align: left;">
+          <input type="text" name="textfield3" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;" required />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align: center; padding: 20px;">
+          <input name="add" type="submit" id="add" value="Add" style="padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;" />
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+{% endblock %}

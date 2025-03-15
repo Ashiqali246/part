@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="worker_register_post" method="post" enctype="multipart/form-data">
+<table width="200" border="1">
+   <tr>
+    <td>Name</td>
+    <td>
+      <label>
+        <input type="text" name="name" required/>
+        </label>  </td>
+  </tr>
+    <tr>
+    <td>DOB</td>
+    <td>
+      <label>
+        <input type="date" name="textfieldd" min="1990-01-01" max="2019-12-31" required  />
+        </label>  </td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td><label>
+        <input type="text" name="textfield3"required />
+      </label></td>
+    </tr> <tr>
+      <td>Phone</td>
+      <td><label>
+        <input type="text" name="textfield2"required pattern="[6789][0-9]{9}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Pin</td>
+      <td><label>
+        <input type="text" name="textfield7"required pattern="[0-9]{6}" />
+      </label></td>
+    </tr>
+    <tr>
+    <td>Post</td>
+    <td>
+      <label>
+        <input type="text" name="textfield"required pattern="[0-9]{6}" />
+        </label>  </td>
+  </tr>
+     <tr>
+    <td>Image</td>
+    <td>
+      <label>
+        <input type="file" name="file" required/>
+        </label>  </td>
+  </tr>
+  <tr>
+    <td>Gender</td>
+    <td>
+      <label>
+      <input name="radiobutton" type="radio" value="radiobutton" />
+      </label> 
+      Male
+      <label>
+      <input name="radiobutton" type="radio" value="radiobutton" />
+      </label>
+      Female
+      <label>
+      <input name="radiobutton" type="radio" value="radiobutton" />
+      </label>
+      Others</td>
+  </tr>
+  <tr>
+    <td>Username</td>
+    <td>
+      <label>
+        <input type="text" name="textfield4"required />
+        </label>      </td>
+  </tr>
+  <tr>
+    <td>Password</td>
+    <td>
+      <label>
+        <input type="text" name="textfield5"required />
+        </label>    </td>
+  </tr>
+  <tr>
+    <td>Confirm Password </td>
+    <td>      <label>
+      <input type="text" name="textfield6" />
+      </label>       </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <label>
+      <input type="submit" name="Submit" value="Register" />
+      </label>      </td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

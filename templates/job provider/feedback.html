@@ -1,0 +1,191 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#{% extends 'job provider/jobpindex.html' %}#}
+{##}
+{#{% block body %}#}
+{#<body>#}
+{#<table width="200" border="1">#}
+{#  <tr>#}
+{#    <td>User</td>#}
+{#    <td>Feedback</td>#}
+{#    <td>Rating</td>#}
+{#    <td>Date</td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <td>&nbsp;</td>#}
+{#    <td>&nbsp;</td>#}
+{#    <td>&nbsp;</td>#}
+{#    <td>&nbsp;</td>#}
+{#  </tr>#}
+{#</table>#}
+{#</body>#}
+{#{% endblock %}#}
+{#</html>#}
+{#{% extends 'job provider/jobpindex.html' %}#}
+{##}
+{#{% block body %}#}
+{#<body>#}
+{#  <style>#}
+{#    /* Add basic styling to the table */#}
+{#    table {#}
+{#      width: 80%;#}
+{#      margin: 20px auto;#}
+{#      border-collapse: collapse;#}
+{#      font-family: Arial, sans-serif;#}
+{#      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);#}
+{#    }#}
+{##}
+{#    th, td {#}
+{#      padding: 12px;#}
+{#      text-align: left;#}
+{#      border-bottom: 1px solid #ddd;#}
+{#    }#}
+{##}
+{#    th {#}
+{#      background-color: #4CAF50;#}
+{#      color: white;#}
+{#    }#}
+{##}
+{#    tr:hover {#}
+{#      background-color: #f1f1f1;#}
+{#    }#}
+{##}
+{#    td {#}
+{#      background-color: #f9f9f9;#}
+{#    }#}
+{##}
+{#    /* Adjust the layout of the table */#}
+{#    .table-container {#}
+{#      overflow-x: auto;#}
+{#    }#}
+{#  </style>#}
+{##}
+{#  <div class="table-container">#}
+{#    <table>#}
+{#      <tr>#}
+{#        <th>User</th>#}
+{#        <th>Feedback</th>#}
+{#        <th>Rating</th>#}
+{#        <th>Date</th>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td>User 1</td>#}
+{#        <td>This is a great service!</td>#}
+{#        <td>5</td>#}
+{#        <td>2024-12-16</td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td>User 2</td>#}
+{#        <td>Could be better.</td>#}
+{#        <td>3</td>#}
+{#        <td>2024-12-15</td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#        <td>User 3</td>#}
+{#        <td>Excellent experience.</td>#}
+{#        <td>4</td>#}
+{#        <td>2024-12-14</td>#}
+{#      </tr>#}
+{#    </table>#}
+{#  </div>#}
+{#</body>#}
+{#{% endblock %}#}
+{% extends 'job provider/jobpindex.html' %}
+
+{% block body %}
+<body>
+  <style>
+    /* Table Styling */
+    table {
+      width: 80%;
+      margin: 30px auto;
+      border-spacing: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+{#        margin-left: 200px;#}
+{#        align-items: center;#}
+    }
+
+    /* Header Styling */
+    th {
+      background-color: #3498db;
+      color: white;
+      padding: 14px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Table Cell Styling */
+    td {
+      padding: 12px 15px;
+      text-align: center;
+      border-bottom: 1px solid #f2f2f2;
+    }
+
+    /* Alternate Row Styling */
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    /* Hover Effect */
+    tr:hover {
+      background-color: #ecf0f1;
+      cursor: pointer;
+    }
+
+    /* Responsive Table */
+    .table-container {
+      overflow-x: auto;
+    }
+
+    /* Small Screen Adjustments */
+    @media screen and (max-width: 768px) {
+      table {
+        width: 100%;
+      }
+
+      th, td {
+        padding: 10px;
+      }
+    }
+  </style>
+
+  <div class="table-container">
+    <table>
+      <tr>
+        <th>User</th>
+        <th>Feedback</th>
+        <th>Rating</th>
+        <th>Date</th>
+      </tr>
+      <tr>
+        <td>User 1</td>
+        <td>Great service! Very satisfied.</td>
+        <td>5</td>
+        <td>2024-12-16</td>
+      </tr>
+      <tr>
+        <td>User 2</td>
+        <td>The experience was average.</td>
+        <td>3</td>
+        <td>2024-12-15</td>
+      </tr>
+      <tr>
+        <td>User 3</td>
+        <td>Highly recommend this!</td>
+        <td>4</td>
+        <td>2024-12-14</td>
+      </tr>
+    </table>
+  </div>
+</body>
+{% endblock %}

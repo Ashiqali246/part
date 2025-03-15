@@ -1,0 +1,170 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#{% extends 'job provider/jobpindex.html' %}#}
+{##}
+{#{% block body %}#}
+{#<body>#}
+{#<table width="200" border="1">#}
+{#  <tr>#}
+{#    <td>Name</td>#}
+{#    <td>DOB</td>#}
+{#    <td>Gender</td>#}
+{#    <td>Image</td>#}
+{#    <td>Phone</td>#}
+{#    <td>Address</td>#}
+{#  </tr>{% for i in data %}#}
+{#  <tr>#}
+{#    <td>{{ i.name }}&nbsp;</td>#}
+{#    <td>{{ i.dob }}&nbsp;</td>#}
+{#    <td>{{ i.gender }}&nbsp;</td>#}
+{#    <td>{{ i.image.url }}&nbsp;</td>#}
+{#    <td>{{ i.phone }}&nbsp;</td>#}
+{#    <td>{{ i.place }}<br>{{ i.post }}<br>{{ i.pin }}&nbsp;</td>#}
+{#  </tr>#}
+{#    {% endfor %}#}
+{#</table>#}
+{#</body>#}
+{#{% endblock %}#}
+{#</html>#}
+{##}
+{#{% extends 'job provider/jobpindex.html' %}#}
+{##}
+{#{% block body %}#}
+{#<body>#}
+{#  <style>#}
+{#    table {#}
+{#      width: 100%;#}
+{#      border-collapse: collapse;#}
+{#      margin: 20px 0;#}
+{#    }#}
+{#    th, td {#}
+{#      padding: 12px 15px;#}
+{#      text-align: left;#}
+{#      border: 1px solid #ddd;#}
+{#    }#}
+{#    th {#}
+{#      background-color: #4CAF50;#}
+{#      color: white;#}
+{#    }#}
+{#    tr:nth-child(even) {#}
+{#      background-color: #f2f2f2;#}
+{#    }#}
+{#    tr:hover {#}
+{#      background-color: #ddd;#}
+{#    }#}
+{#    td img {#}
+{#      width: 100px;#}
+{#      height: 100px;#}
+{#      object-fit: cover;#}
+{#    }#}
+{#  </style>#}
+{##}
+{#  <table>#}
+{#    <thead>#}
+{#      <tr>#}
+{#        <th>Name</th>#}
+{#        <th>DOB</th>#}
+{#        <th>Gender</th>#}
+{#        <th>Image</th>#}
+{#        <th>Phone</th>#}
+{#        <th>Address</th>#}
+{#      </tr>#}
+{#    </thead>#}
+{#    <tbody>#}
+{#      {% for i in data %}#}
+{#      <tr>#}
+{#        <td>{{ i.name }}&nbsp;</td>#}
+{#        <td>{{ i.dob }}&nbsp;</td>#}
+{#        <td>{{ i.gender }}&nbsp;</td>#}
+{#        <td><img src="{{ i.image.url }}" alt="Image" /></td>#}
+{#        <td>{{ i.phone }}&nbsp;</td>#}
+{#        <td>{{ i.place }}<br>{{ i.post }}<br>{{ i.pin }}&nbsp;</td>#}
+{#      </tr>#}
+{#      {% endfor %}#}
+{#    </tbody>#}
+{#  </table>#}
+{#</body>#}
+{#{% endblock %}#}
+{% extends 'job provider/jobpindex.html' %}
+
+{% block body %}
+<body>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 0px;
+    }
+    table {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 20px 0;
+      background-color: #ffffff;
+    }
+    th, td {
+      padding: 15px;
+      text-align: left;
+      font-size: 14px;
+    }
+    th {
+      background-color: #1DB954;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    td img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #ddd;
+    }
+    td {
+      border-bottom: 1px solid #ddd;
+    }
+    td:last-child {
+      border-bottom: none;
+    }
+  </style>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Image</th>
+        <th>Phone</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in val %}
+      <tr>
+        <td>{{ i.name }}&nbsp;</td>
+        <td>{{ i.dob }}&nbsp;</td>
+        <td>{{ i.gender }}&nbsp;</td>
+        <td><img src="{{ i.image.url }}" alt="Image" /></td>
+        <td>{{ i.phone }}&nbsp;</td>
+        <td>{{ i.place }}<br>{{ i.post }}<br>{{ i.pin }}&nbsp;</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+{% endblock %}

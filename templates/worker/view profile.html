@@ -1,0 +1,173 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{#{% extends 'worker/index.html' %}#}
+{#{% block body %}#}
+{#<table width="200" border="1">#}
+{#  <tr>#}
+{#    <td>Name: {{ work.name }}</td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <td>Phone: {{ work.phone }}</td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <td>Address: {{ work.place }}<br>{{ work.pin }}<br>{{ work.post }}</td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <td>Image#}
+{#    <img src="{{ work.image.url }}" style="height: 100px;width: 100px" alt=""/></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <td>D.O.B:{{ work.dob }}</td>#}
+{#  </tr>#}
+{#      <tr>#}
+{#    <td><a href="edit_profile">Edit</a></td>#}
+{#  </tr>#}
+{#</table>#}
+{##}
+{##}
+{#</html>#}
+{#{% endblock %}#}
+{% extends 'worker/index.html' %}
+{% block body %}
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+
+
+    }
+
+    .profile-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+        margin-left: 350px;
+    }
+
+    .profile-card {
+        width: 100%;
+        max-width: 500px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    .profile-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card-header {
+        background: linear-gradient(135deg, #1DB954, #1ED760);
+        color: #ffffff;
+        text-align: center;
+        padding: 30px 20px;
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+
+    .card-content {
+        padding: 20px;
+        color: #333333;
+    }
+
+    .profile-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .profile-item span:first-child {
+        font-weight: bold;
+        color: #555555;
+    }
+
+    .profile-item span:last-child {
+        color: #777777;
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    .image-container img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 4px solid #dddddd;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .edit-button {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .edit-button a {
+        text-decoration: none;
+        background: linear-gradient(135deg, #1DB954, #1ED760);
+        color: #ffffff;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .edit-button a:hover {
+        background: linear-gradient(135deg, #5a53e0, #7364e0);
+        box-shadow: 0 4px 12px rgba(108, 99, 255, 0.4);
+    }
+</style>
+
+<div class="profile-container">
+    <div class="profile-card">
+        <div class="card-header">
+            Profile
+        </div>
+        <div class="card-content">
+            <div class="profile-item">
+                <span>Name:</span>
+                <span>{{ work.name }}</span>
+            </div>
+            <div class="profile-item">
+                <span>Phone:</span>
+                <span>{{ work.phone }}</span>
+            </div>
+            <div class="profile-item">
+                <span>Address:</span>
+                <span>{{ work.place }}<br>{{ work.pin }}<br>{{ work.post }}</span>
+            </div>
+            <div class="profile-item">
+                <span>Email:</span>
+                <span>{{ work.email }}<br></span>
+            </div>
+            <div class="image-container">
+                <img src="{{ work.image.url }}" alt="Profile Image">
+            </div>
+
+            <div class="profile-item">
+                <span>D.O.B:</span>
+                <span>{{ work.dob }}</span>
+            </div>
+        </div>
+        <div class="edit-button">
+            <a href="edit_profile">Edit Profile</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,77 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"  />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{#{% extends 'admin/index.html' %}#}
+{#{% block body %}#}
+{#<body>#}
+{#<form action="" method="get" enctype="multipart/form-data">#}
+{#<table width="200" border="1">#}
+{#  <tr>#}
+{#    <td>Name</td>#}
+{#    <td>DOB</td>#}
+{#    <td>Gender</td>#}
+{#    <td>Image</td>#}
+{#    <td>Phone</td>#}
+{#    <td>Address</td>#}
+{#  </tr>#}
+{#    {% for i in data %}#}
+{#  <tr>#}
+{#    <td>{{ i.name }}&nbsp;</td>#}
+{#    <td>{{ i.dob }}&nbsp;</td>#}
+{#    <td>{{ i.gender }}&nbsp;</td>#}
+{#    <td>{{ i.image.url }}&nbsp;</td>#}
+{#    <td>{{ i.phone }}&nbsp;</td>#}
+{#    <td>{{ i.place }}<br>{{ i.post }}<br>{{ i.pin }}&nbsp;</td>#}
+{#  </tr>#}
+{#    {% endfor %}#}
+{#</table>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
+{#{% endblock %}#}
+{% extends 'admin/index.html' %}
+
+{% block body %}
+<body>
+  <!-- Add Bootstrap CSS if not already included -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <div class="container mt-5">
+    <form action="" method="get" enctype="multipart/form-data">
+      <table class="table table-bordered table-hover table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Image</th>
+            <th>Phone</th>
+            <th>Address</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in data %}
+            <tr>
+              <td>{{ i.name }}</td>
+              <td>{{ i.dob }}</td>
+              <td>{{ i.gender }}</td>
+              <td>
+                <img src="{{ i.image.url }}" class="img-fluid" style="max-width: 100px; height: auto;">
+              </td>
+              <td>{{ i.phone }}</td>
+              <td>{{ i.place }}<br>{{ i.post }}<br>{{ i.pin }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </form>
+  </div>
+
+  <!-- Optional Bootstrap JS and Popper.js (for interactions like tooltips, dropdowns) -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+{% endblock %}

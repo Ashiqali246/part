@@ -1,0 +1,183 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+
+{#{% extends 'worker/index.html' %}#}
+{#{% block body %}#}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="">#}
+{#  <table width="200" border="1">#}
+{#    <tr>#}
+{#      <td width="79">Work type </td>#}
+{#      <td width="105"><label>#}
+{#        <input type="text" name="textfield" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>Details</td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield2" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>Rate</td>#}
+{#      <td><label>#}
+{#        <input type="text" name="textfield3" />#}
+{#      </label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td colspan="2"><a href="#">Add</a></td>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+{#</html>#}
+
+{#{% extends 'worker/index.html' %}#}
+{##}
+{#{% block body %}#}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="">#}
+{#  <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd; font-family: Arial, sans-serif;">#}
+{#    <tr>#}
+{#      <th style="text-align: left; padding: 8px; background-color: #f4f4f4;">Work Type</th>#}
+{#      <td style="padding: 8px;"><input type="text" name="textfield" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"required /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th style="text-align: left; padding: 8px; background-color: #f4f4f4;">Details</th>#}
+{#      <td style="padding: 8px;"><input type="text" name="textfield2" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"required /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th style="text-align: left; padding: 8px; background-color: #f4f4f4;">Rate</th>#}
+{#      <td style="padding: 8px;"><input type="text" name="textfield3" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" required/></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td colspan="2" style="text-align: center; padding: 10px;">#}
+{#        <a href="#" style="text-decoration: none; padding: 10px 20px; background-color: #4CAF50; color: white; border-radius: 4px; font-weight: bold;">Add</a>#}
+{#      </td>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+
+{% extends 'worker/index.html' %}
+
+{% block body %}
+<body>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .form-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-container h2 {
+    margin: 0 0 20px;
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .form-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+  }
+
+  .form-table th,
+  .form-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .form-table th {
+    background-color: #1DB954;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+
+  .form-table input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+  }
+
+  .form-table input:focus {
+    border-color: #1DB954;
+    outline: none;
+    box-shadow: 0 0 5px rgba(29, 185, 84, 0.3);
+  }
+
+  .form-actions {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .form-actions a {
+    text-decoration: none;
+    background-color: #1DB954;
+    color: white;
+    padding: 12px 25px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .form-actions a:hover {
+    background-color: #17a74a;
+  }
+</style>
+
+<div class="form-container">
+  <h2>Add Work Rate</h2>
+  <form id="form1" name="form1" method="post" action="">
+    <table class="form-table">
+      <tr>
+        <th>Work Type</th>
+        <td><input type="text" name="textfield" required /></td>
+      </tr>
+      <tr>
+        <th>Details</th>
+        <td><input type="text" name="textfield2" required /></td>
+      </tr>
+      <tr>
+        <th>Rate</th>
+        <td><input type="text" name="textfield3" required /></td>
+      </tr>
+    </table>
+    <div class="form-actions">
+      <a href="#" id="add">Add</a>
+    </div>
+  </form>
+</div>
+</body>
+{% endblock %}
+

@@ -1,0 +1,118 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{#{% extends 'admin/index.html' %}#}
+{#{% block body %}#}
+{#<body>#}
+{#<table width="200" border="1">#}
+{#  <tr>#}
+{#    <td>User</td>#}
+{#    <td>Complaint</td>#}
+{#    <td>Date</td>#}
+{#  </tr>#}
+{#   {% for i in data %}#}
+{#  <tr>#}
+{#    <td>{{ i.USER.name }}&nbsp;</td>#}
+{#    <td>{{ i.complaint }}&nbsp;</td>#}
+{#    <td>{{ i.date }}&nbsp;</td>#}
+{#    <td rowspan="2">#}
+{##}
+{#        {% if i.replay == 'pending' %}#}
+{#        <a href="/send_reply/{{ i.id }}">Send Reply</a>#}
+{#    {% else %}#}
+{#        {{ i.replay }}#}
+{#        {% endif %}#}
+{#    </td>#}
+{#  </tr>#}
+{#{% endfor %}#}
+{#</table>#}
+{#</body>#}
+{#</html>#}
+{#{% endblock %}#}
+{#{% extends 'admin/index.html' %}#}
+{##}
+{#{% block body %}#}
+{#<body>#}
+{#  <!-- Add Bootstrap CSS if not already included -->#}
+{#  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">#}
+{##}
+{#  <div class="container mt-5">#}
+{#    <table class="table table-bordered table-hover table-striped">#}
+{#      <thead class="table-dark">#}
+{#        <tr>#}
+{#          <th>User</th>#}
+{#          <th>Complaint</th>#}
+{#          <th>Date</th>#}
+{#          <th>Reply Status</th>#}
+{#        </tr>#}
+{#      </thead>#}
+{#      <tbody>#}
+{#        {% for i in data %}#}
+{#          <tr>#}
+{#            <td>{{ i.USER.name }}</td>#}
+{#            <td>{{ i.complaint }}</td>#}
+{#            <td>{{ i.date }}</td>#}
+{#            <td rowspan="2" class="align-middle">#}
+{#              {% if i.replay == 'pending' %}#}
+{#                <a href="/send_reply/{{ i.id }}" class="btn btn-primary btn-sm">Send Reply</a>#}
+{#              {% else %}#}
+{#                {{ i.replay }}#}
+{#              {% endif %}#}
+{#            </td>#}
+{#          </tr>#}
+{#        {% endfor %}#}
+{#      </tbody>#}
+{#    </table>#}
+{#  </div>#}
+{##}
+{#  <!-- Optional Bootstrap JS and Popper.js (for tooltips, popups, etc.) -->#}
+{#  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>#}
+{#  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>#}
+{#</body>#}
+{#{% endblock %}#}
+
+
+
+
+{% extends 'job provider/jobpindex.html' %}
+
+{% block body %}
+  <!-- Add Bootstrap CSS if not already included -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <div class="container mt-5">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>User</th>
+            <th>Complaint</th>
+            <th>Date</th>
+            <th>Reply Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in data %}
+            <tr>
+              <td>{{ i.USER.name }}</td>
+              <td>{{ i.complaint }}</td>
+              <td>{{ i.date }}</td>
+              <td class="text-center">
+
+                  {{ i.replay }}
+
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Optional Bootstrap JS and Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+{% endblock %}

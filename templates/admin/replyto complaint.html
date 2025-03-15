@@ -1,0 +1,107 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/send_reply_post">#}
+{#<table width="200" border="1">#}
+{#  <tr>#}
+{#    <td>Reply</td>#}
+{#    <td>#}
+{#      <label>#}
+{#          <input type="text" name="textfield" required />#}
+{#      </label>#}
+{#       </td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <td>#}
+{#      <label>#}
+{#      <input type="submit"  />#}
+{#      </label>#}
+{#       </td>#}
+{#  </tr>#}
+{#</table>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Reply Form</title>
+
+<!-- Internal CSS for Styling -->
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  input[type="text"] {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+
+<body>
+
+<form id="form1" name="form1" method="post" action="/send_reply_post">
+  <table>
+    <tr>
+      <td><strong>Reply</strong></td>
+      <td><input type="text" name="textfield" required /></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+        <input type="submit" value="Send Reply" />
+      </td>
+    </tr>
+  </table>
+</form>
+
+</body>
+</html>
